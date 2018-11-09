@@ -30,6 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="레시피 이름"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="20dp"
                 android:textColor="#ffffff"/>
             <TextView
@@ -38,6 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="재료들"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="20dp"
                 android:textColor="#ffffff"/>
             <LinearLayout

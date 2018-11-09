@@ -48,10 +48,10 @@ public class Heart extends Fragment {
 
         mRecipeArr.clear();
         //테스트용 하드코딩
-        RecipeClass recipeClass1 = new RecipeClass("호준 레시피","호준 호준", "1000");
-        RecipeClass recipeClass2 = new RecipeClass("건우 레시피","건우 건우", "100");
-        RecipeClass recipeClass3 = new RecipeClass("보협 레시피","보협 보협", "10");
-        RecipeClass recipeClass4 = new RecipeClass("우진 레시피","우진 우진", "1");
+        RecipeClass recipeClass1 = new RecipeClass("이탈리안 BMT","허니오트, 아메리칸 치즈", "1000");
+        RecipeClass recipeClass2 = new RecipeClass("치킨 데리야끼","플랫 브래드, 체다 치즈", "100");
+        RecipeClass recipeClass3 = new RecipeClass("폴드 포크","플랫 브래드, 아메리칸 치즈", "10");
+        RecipeClass recipeClass4 = new RecipeClass("터키 베이컨 아보카도","허니오트, 아보카도", "1");
 
         mRecipeArr.add(recipeClass1);
         mRecipeArr.add(recipeClass2);

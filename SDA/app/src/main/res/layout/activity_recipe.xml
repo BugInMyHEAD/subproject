@@ -7,20 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:layout_marginTop="8dp"/>
         <Button
-            android:id="@+id/search_back"
+            android:id="@+id/recipe_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="X"
+            android:text="이전"
+            android:textSize="24dp"
+            android:background="#00ff0000"
+            android:layout_gravity="left"/>
+        <Button
+            android:id="@+id/recipe_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
             android:textSize="24dp"
             android:background="#00ff0000"
             android:layout_gravity="right"/>
@@ -33,154 +32,54 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
+            <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="빵 선택"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:layout_marginTop="30dp"/>
-
-            <Spinner
-                android:layout_margin="10dp"
-                android:id="@+id/spinner_color"
-                android:entries="@array/bread"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right">
+                <TextView
+                    android:id="@+id/heart_mark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="♥"
+                    android:textSize="20dp"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:id="@+id/recipe_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하트"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+                    android:layout_marginRight="10dp"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
-                />
-
+                android:src="@drawable/image"
+                android:layout_gravity="center"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="야채 선택"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"/>
-
-            <!--리스트뷰로 표현 가능할 듯-->
-            <CheckBox
-                android:id="@+id/lettuce"
+                android:id="@+id/recipe_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="양상추"
+                android:layout_marginTop="10dp"
+                android:text="레시피 타이틀"
+                android:textSize="30dp"
+                android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/tomatoes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="토마토"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/cucumbers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="오이"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/peppers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="피망"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/red_onions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="양파"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/pickles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="피클"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/olives"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="올리브"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/jalapenos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="할라피뇨"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/avocado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="아보카도"
-                android:layout_gravity="center"
-                />
-
+                android:textColor="#000000"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="치즈 선택"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"/>
-
-            <!--리스트뷰랑 디비 받아와서 동적 구현 가능할 듯-->
-            <CheckBox
-                android:id="@+id/american_cheese"
+                android:id="@+id/recipe_ingredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아메리칸 치즈"
+                android:layout_marginTop="10dp"
+                android:text="레시피 재료"
+                android:textSize="20dp"
                 android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/shredded_cheese"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="슈레드 치즈"
-                android:layout_gravity="center"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="소스 선택"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"/>
-
-            <!--리스트뷰랑 디비 받아와서 동적 구현 가능할 듯-->
-            <CheckBox
-                android:id="@+id/honey_mustard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="허니 머스타드"
-                android:layout_gravity="center"
-                />
-            <CheckBox
-                android:id="@+id/ranch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="랜치 드레싱"
-                android:layout_gravity="center"
-                />
+                android:textColor="#000000"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -188,17 +87,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/search_save"
+            android:id="@+id/recipe_smart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="저장하기"
+            android:text="스마트 오더"
             android:textSize="24dp"
             android:layout_weight="1"/>
         <Button
-            android:id="@+id/search_active"
+            android:id="@+id/recipe_qr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="검색"
+            android:text="QR코드 주문"
             android:textSize="24dp"
             android:layout_weight="1"/>
     </LinearLayout>
