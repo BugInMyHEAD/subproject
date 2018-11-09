@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">subwayrecipe</string>
+    <string-array name="bread">
+        <item >허니오트</item>
+        <item >하티</item>
+        <item >위트</item>
+        <item >파마산 오레가노</item>
+        <item >화이트</item>
+        <item >플랫브래드</item>
+    </string-array>
 </resources>

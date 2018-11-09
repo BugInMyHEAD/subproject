@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textSize="24dp"
+            android:background="#00ff0000"
+            android:layout_gravity="right"/>
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="빵 선택"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="30dp"/>
+
+            <Spinner
+                android:layout_margin="10dp"
+                android:id="@+id/spinner_color"
+                android:entries="@array/bread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="야채 선택"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--리스트뷰로 표현 가능할 듯-->
+            <CheckBox
+                android:id="@+id/lettuce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="양상추"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/tomatoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토마토"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/cucumbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오이"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/peppers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="피망"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/red_onions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="양파"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/pickles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="피클"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/olives"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="올리브"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/jalapenos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="할라피뇨"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/avocado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아보카도"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="치즈 선택"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--리스트뷰랑 디비 받아와서 동적 구현 가능할 듯-->
+            <CheckBox
+                android:id="@+id/american_cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아메리칸 치즈"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/shredded_cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="슈레드 치즈"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="소스 선택"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--리스트뷰랑 디비 받아와서 동적 구현 가능할 듯-->
+            <CheckBox
+                android:id="@+id/honey_mustard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="허니 머스타드"
+                android:layout_gravity="center"
+                />
+            <CheckBox
+                android:id="@+id/ranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="랜치 드레싱"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/search_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="저장하기"
+            android:textSize="24dp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/search_active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textSize="24dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

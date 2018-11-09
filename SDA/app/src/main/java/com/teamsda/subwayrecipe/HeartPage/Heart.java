@@ -1,10 +1,13 @@
 package com.teamsda.subwayrecipe.HeartPage;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.teamsda.subwayrecipe.Custom.HeartCustomAdapter;
@@ -17,6 +20,7 @@ public class Heart extends Fragment {
     private ListView mListView;
     private ArrayList<RecipeClass> mRecipeArr;
     private HeartCustomAdapter mAdapter;
+    RecipeClass ForRecipe;
 
     public static Heart newInstance() {
         return new Heart();
@@ -25,6 +29,17 @@ public class Heart extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
         view =  inflater.inflate(R.layout.fragment_heart, container, false);
+
+        Button search = (Button)view.findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent search_intent = new Intent(getContext(),SearchActivity.class);
+                startActivity(search_intent);
+                getActivity().finish();
+            }
+        });
+
         mListView = (ListView) view.findViewById(R.id.listView_heart);
         mRecipeArr = new ArrayList<RecipeClass>();
 
@@ -45,6 +60,21 @@ public class Heart extends Fragment {
 
         mAdapter.notifyDataSetChanged();
         mListView.setSelection(0);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+               ForRecipe = mRecipeArr.get(position);
+
+                Intent recipe_intent = new Intent(getContext(), RecipeActivity.class);
+                recipe_intent.putExtra("title", ForRecipe.getTitle());
+                recipe_intent.putExtra("ingredients", ForRecipe.getIngredients());
+                recipe_intent.putExtra("score", ForRecipe.getScore());
+
+                startActivity(recipe_intent);
+                getActivity().finish();
+            }
+        });
         return view;
     }
 }
