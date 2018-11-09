@@ -30,11 +30,12 @@ public class Heart extends Fragment {
         View view;
         view =  inflater.inflate(R.layout.fragment_heart, container, false);
 
-        Button search = (Button)view.findViewById(R.id.search);
+        Button search = (Button)view.findViewById(R.id.search_heart);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent search_intent = new Intent(getContext(),SearchActivity.class);
+                search_intent.putExtra("mark","♥");
                 startActivity(search_intent);
                 getActivity().finish();
             }
@@ -67,6 +68,7 @@ public class Heart extends Fragment {
                ForRecipe = mRecipeArr.get(position);
 
                 Intent recipe_intent = new Intent(getContext(), RecipeActivity.class);
+                recipe_intent.putExtra("mark","♥");
                 recipe_intent.putExtra("title", ForRecipe.getTitle());
                 recipe_intent.putExtra("ingredients", ForRecipe.getIngredients());
                 recipe_intent.putExtra("score", ForRecipe.getScore());

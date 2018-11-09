@@ -13,8 +13,8 @@ import com.teamsda.subwayrecipe.R;
 
 public class RecipeActivity extends AppCompatActivity {
 
-    TextView recipe_title,recipe_ingredients,recipe_score;
-    String st_title,st_ingredients,st_score;
+    TextView recipe_title,recipe_ingredients,recipe_mark,recipe_score;
+    String st_title,st_ingredients,st_mark,st_score;
     Button recipe_back,recipe_save,recipe_smart,recipe_qr;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,15 +22,18 @@ public class RecipeActivity extends AppCompatActivity {
 
         recipe_title = (TextView)findViewById(R.id.recipe_title);
         recipe_ingredients = (TextView)findViewById(R.id.recipe_ingredients);
+        recipe_mark = (TextView)findViewById(R.id.recipe_mark);
         recipe_score = (TextView)findViewById(R.id.recipe_score);
 
         Intent recipe_intent = getIntent();
         st_title = recipe_intent.getStringExtra("title");
         st_ingredients = recipe_intent.getStringExtra("ingredients");
+        st_mark = recipe_intent.getStringExtra("mark");
         st_score = recipe_intent.getStringExtra("score");
 
         recipe_title.setText(st_title);
         recipe_ingredients.setText(st_ingredients);
+        recipe_mark.setText(st_mark);
         recipe_score.setText(st_score);
 
         recipe_back = (Button)findViewById(R.id.recipe_back);
@@ -54,7 +57,7 @@ public class RecipeActivity extends AppCompatActivity {
         recipe_smart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"스마트오더.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"스마트 오더 준비중",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -62,7 +65,7 @@ public class RecipeActivity extends AppCompatActivity {
         recipe_qr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"qr코드 오더.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"qr코드 오더 준비중",Toast.LENGTH_SHORT).show();
             }
         });
     }

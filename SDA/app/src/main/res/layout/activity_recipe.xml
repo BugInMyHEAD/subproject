@@ -39,7 +39,7 @@
                 android:orientation="horizontal"
                 android:gravity="right">
                 <TextView
-                    android:id="@+id/heart_mark"
+                    android:id="@+id/recipe_mark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="♥"
