@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:background="@color/colorSDA"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/heart_img"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_margin="5dp"
+            android:background="#ffffff"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/heart_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="레시피 이름"
+                android:textSize="20dp"
+                android:textColor="#ffffff"/>
+            <TextView
+                android:id="@+id/heart_ingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="재료들"
+                android:textSize="20dp"
+                android:textColor="#ffffff"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:layout_gravity="right|bottom">
+                <TextView
+                    android:id="@+id/heart_mark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="♥"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:textColor="#ffffff"/>
+                <TextView
+                    android:id="@+id/heart_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하트"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="20dp"
+                    android:layout_gravity="right"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 순위 왕관 리스트 뷰에서 뿌려줄 때 인덱스 0,1,2 에게만 부여하면 됨 -->
+
+    <TextView
+        android:id="@+id/heart_crown"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="5dp"
+        android:text="1"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#525ea3"
+        android:gravity="center"
+        android:background="#d2b8b8"/>
+</FrameLayout>
