@@ -14,8 +14,9 @@ import com.teamsda.subwayrecipe.R;
 public class RecipeActivity extends AppCompatActivity {
 
     TextView recipe_title,recipe_bread,recipe_veg,recipe_cheese,recipe_sauce,recipe_mark,recipe_score;
-    String st_title,st_ingredients,st_mark,st_score;
+    String st_where,st_title,st_ingredients,st_mark,st_score;
     Button recipe_back,recipe_save,recipe_smart,recipe_qr;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
@@ -29,6 +30,7 @@ public class RecipeActivity extends AppCompatActivity {
         recipe_score = (TextView)findViewById(R.id.recipe_score);
 
         Intent recipe_intent = getIntent();
+        st_where = recipe_intent.getStringExtra("where");
         st_title = recipe_intent.getStringExtra("title");
         st_ingredients = recipe_intent.getStringExtra("ingredients");
         String[] ingredients = st_ingredients.split("/");
@@ -47,9 +49,15 @@ public class RecipeActivity extends AppCompatActivity {
         recipe_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent refresh_intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(refresh_intent);
-                finish();
+
+                if(st_where.equals("Heart")) {
+                    Intent refresh_intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(refresh_intent);
+                    finish();
+                }
+                else if(st_where.equals("Result")){
+                    finish();
+                }
             }
         });
         recipe_save = (Button)findViewById(R.id.recipe_save);
@@ -79,8 +87,14 @@ public class RecipeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent refresh_intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(refresh_intent);
-        finish();
+        // 오는 곳에 따라 나가는 곳 수정
+        if(st_where.equals("Heart")) {
+            Intent refresh_intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(refresh_intent);
+            finish();
+        }
+        else if(st_where.equals("Result")){
+            finish();
+        }
     }
 }

@@ -44,7 +44,7 @@
 
             <Spinner
                 android:layout_margin="10dp"
-                android:id="@+id/spinner_color"
+                android:id="@+id/spinner_bread"
                 android:entries="@array/bread"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

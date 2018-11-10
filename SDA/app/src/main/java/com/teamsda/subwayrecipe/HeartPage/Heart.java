@@ -31,6 +31,8 @@ public class Heart extends Fragment {
         View view;
         view =  inflater.inflate(R.layout.fragment_heart, container, false);
 
+
+        //검색
         Button search = (Button)view.findViewById(R.id.search_heart);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +91,7 @@ public class Heart extends Fragment {
                ForRecipe = mRecipeArr.get(position);
 
                 Intent recipe_intent = new Intent(getContext(), RecipeActivity.class);
+                recipe_intent.putExtra("where","Heart");
                 recipe_intent.putExtra("mark","♥");
                 recipe_intent.putExtra("title", ForRecipe.getTitle());
                 recipe_intent.putExtra("ingredients", ForRecipe.getIngredientsClass().getIngredients());
