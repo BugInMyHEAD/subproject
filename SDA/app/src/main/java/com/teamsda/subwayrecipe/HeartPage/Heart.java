@@ -53,24 +53,37 @@ public class Heart extends Fragment {
 
         mRecipeArr.clear();
         //테스트용 하드코딩
-        ArrayList<String> veg = new ArrayList<String>();
-        veg.add("토마토");
-        veg.add("피클");
-        veg.add("양상추");
-        ArrayList<String> cheese = new ArrayList<String>();
-        cheese.add("아메리칸 치즈");
-        ArrayList<String> sauce = new ArrayList<String>();
-        sauce.add("렌치");
+        ArrayList<String> veg1 = new ArrayList<String>();
+        veg1.add("토마토");
+        veg1.add("피클");
+        veg1.add("양상추");
+        ArrayList<String> cheese1 = new ArrayList<String>();
+        cheese1.add("아메리칸 치즈");
+        ArrayList<String> sauce1 = new ArrayList<String>();
+        sauce1.add("렌치");
 
-        IngredientsClass ingredientsClass = new IngredientsClass("허니오트",veg,cheese,sauce);
-        RecipeClass recipeClass1 = new RecipeClass(0,"이탈리안 BMT",ingredientsClass, "1000");
-        RecipeClass recipeClass2 = new RecipeClass(1,"이탈리안 BMT",ingredientsClass, "999");
-        RecipeClass recipeClass3 = new RecipeClass(2,"이탈리안 BMT",ingredientsClass, "998");
-        RecipeClass recipeClass4 = new RecipeClass(3,"이탈리안 BMT",ingredientsClass, "997");
-        RecipeClass recipeClass5 = new RecipeClass(4,"이탈리안 BMT",ingredientsClass, "996");
-        RecipeClass recipeClass6 = new RecipeClass(5,"이탈리안 BMT",ingredientsClass, "995");
-        RecipeClass recipeClass7 = new RecipeClass(6,"이탈리안 BMT",ingredientsClass, "994");
-        RecipeClass recipeClass8 = new RecipeClass(7,"이탈리안 BMT",ingredientsClass, "993");
+        ArrayList<String> veg2 = new ArrayList<String>();
+        veg2.add("할라피뇨");
+        veg2.add("오이");
+        veg2.add("올리브");
+        ArrayList<String> cheese2 = new ArrayList<String>();
+        cheese2.add("슈레드 치즈");
+        ArrayList<String> sauce2 = new ArrayList<String>();
+        sauce2.add("허니 머스타드");
+
+        IngredientsClass ingredientsClass1 = new IngredientsClass("허니오트",veg1,cheese1,sauce1);
+        IngredientsClass ingredientsClass2 = new IngredientsClass("허니오트",veg2,cheese2,sauce2);
+        IngredientsClass ingredientsClass3 = new IngredientsClass("플랫브래드",veg1,cheese1,sauce1);
+        IngredientsClass ingredientsClass4 = new IngredientsClass("플랫브래드",veg2,cheese2,sauce2);
+
+        RecipeClass recipeClass1 = new RecipeClass(0,"이탈리안 BMT",ingredientsClass1, "1000");
+        RecipeClass recipeClass2 = new RecipeClass(1,"이탈리안 BMT",ingredientsClass2, "999");
+        RecipeClass recipeClass3 = new RecipeClass(2,"이탈리안 BMT",ingredientsClass3, "998");
+        RecipeClass recipeClass4 = new RecipeClass(3,"이탈리안 BMT",ingredientsClass4, "997");
+        RecipeClass recipeClass5 = new RecipeClass(4,"이탈리안 BMT",ingredientsClass1, "996");
+        RecipeClass recipeClass6 = new RecipeClass(5,"이탈리안 BMT",ingredientsClass2, "995");
+        RecipeClass recipeClass7 = new RecipeClass(6,"이탈리안 BMT",ingredientsClass3, "994");
+        RecipeClass recipeClass8 = new RecipeClass(7,"이탈리안 BMT",ingredientsClass4, "993");
 
         mRecipeArr.add(recipeClass1);
         mRecipeArr.add(recipeClass2);
