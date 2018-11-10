@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.teamsda.subwayrecipe.Custom.HeartCustomAdapter;
+import com.teamsda.subwayrecipe.Custom.IngredientsClass;
 import com.teamsda.subwayrecipe.Custom.RecipeClass;
 import com.teamsda.subwayrecipe.R;
 
@@ -36,6 +37,7 @@ public class Heart extends Fragment {
             public void onClick(View view) {
                 Intent search_intent = new Intent(getContext(),SearchActivity.class);
                 search_intent.putExtra("mark","♥");
+
                 startActivity(search_intent);
                 getActivity().finish();
             }
@@ -49,15 +51,34 @@ public class Heart extends Fragment {
 
         mRecipeArr.clear();
         //테스트용 하드코딩
-        RecipeClass recipeClass1 = new RecipeClass("이탈리안 BMT","허니오트, 아메리칸 치즈", "1000");
-        RecipeClass recipeClass2 = new RecipeClass("치킨 데리야끼","플랫 브래드, 체다 치즈", "100");
-        RecipeClass recipeClass3 = new RecipeClass("폴드 포크","플랫 브래드, 아메리칸 치즈", "10");
-        RecipeClass recipeClass4 = new RecipeClass("터키 베이컨 아보카도","허니오트, 아보카도", "1");
+        ArrayList<String> veg = new ArrayList<String>();
+        veg.add("토마토");
+        veg.add("피클");
+        veg.add("양상추");
+        ArrayList<String> cheese = new ArrayList<String>();
+        cheese.add("아메리칸 치즈");
+        ArrayList<String> sauce = new ArrayList<String>();
+        sauce.add("렌치");
+
+        IngredientsClass ingredientsClass = new IngredientsClass("허니오트",veg,cheese,sauce);
+        RecipeClass recipeClass1 = new RecipeClass(0,"이탈리안 BMT",ingredientsClass, "1000");
+        RecipeClass recipeClass2 = new RecipeClass(1,"이탈리안 BMT",ingredientsClass, "999");
+        RecipeClass recipeClass3 = new RecipeClass(2,"이탈리안 BMT",ingredientsClass, "998");
+        RecipeClass recipeClass4 = new RecipeClass(3,"이탈리안 BMT",ingredientsClass, "997");
+        RecipeClass recipeClass5 = new RecipeClass(4,"이탈리안 BMT",ingredientsClass, "996");
+        RecipeClass recipeClass6 = new RecipeClass(5,"이탈리안 BMT",ingredientsClass, "995");
+        RecipeClass recipeClass7 = new RecipeClass(6,"이탈리안 BMT",ingredientsClass, "994");
+        RecipeClass recipeClass8 = new RecipeClass(7,"이탈리안 BMT",ingredientsClass, "993");
 
         mRecipeArr.add(recipeClass1);
         mRecipeArr.add(recipeClass2);
         mRecipeArr.add(recipeClass3);
         mRecipeArr.add(recipeClass4);
+        mRecipeArr.add(recipeClass5);
+        mRecipeArr.add(recipeClass6);
+        mRecipeArr.add(recipeClass7);
+        mRecipeArr.add(recipeClass8);
+
 
         mAdapter.notifyDataSetChanged();
         mListView.setSelection(0);
@@ -70,7 +91,7 @@ public class Heart extends Fragment {
                 Intent recipe_intent = new Intent(getContext(), RecipeActivity.class);
                 recipe_intent.putExtra("mark","♥");
                 recipe_intent.putExtra("title", ForRecipe.getTitle());
-                recipe_intent.putExtra("ingredients", ForRecipe.getIngredients());
+                recipe_intent.putExtra("ingredients", ForRecipe.getIngredientsClass().getIngredients());
                 recipe_intent.putExtra("score", ForRecipe.getScore());
 
                 startActivity(recipe_intent);

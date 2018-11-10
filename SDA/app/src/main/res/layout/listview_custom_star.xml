@@ -73,6 +73,7 @@
     <!-- 순위 왕관 리스트 뷰에서 뿌려줄 때 인덱스 0,1,2 에게만 부여하면 됨 -->
 
     <TextView
+        android:visibility="invisible"
         android:id="@+id/star_crown"
         android:layout_width="30dp"
         android:layout_height="30dp"

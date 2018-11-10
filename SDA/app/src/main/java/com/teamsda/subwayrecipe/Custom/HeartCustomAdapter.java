@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +49,6 @@ public class HeartCustomAdapter extends BaseAdapter {
             holder.title = (TextView)v.findViewById(R.id.heart_title);
             holder.ingredients = (TextView)v.findViewById(R.id.heart_ingredients);
             holder.score = (TextView)v.findViewById(R.id.heart_score);
-
             v.setTag(holder);
         }else{
             holder = (ViewHolder)v.getTag();
@@ -59,7 +59,7 @@ public class HeartCustomAdapter extends BaseAdapter {
 
         //리스트뷰의 아이템에 맞는 String값을 입력
         holder.title.setText(recipe.title);
-        holder.ingredients.setText(recipe.ingredients);
+        holder.ingredients.setText(recipe.ingredientsClass.getIngredients());
         holder.score.setText(recipe.score);
 
         return v;
@@ -82,6 +82,5 @@ public class HeartCustomAdapter extends BaseAdapter {
         TextView title;
         TextView ingredients;
         TextView score;
-
     }
 }

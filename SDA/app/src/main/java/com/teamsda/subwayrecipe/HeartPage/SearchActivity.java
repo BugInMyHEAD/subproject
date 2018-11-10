@@ -39,7 +39,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //검색 결과 가지고 갱신
-                Intent refresh_intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent refresh_intent = new Intent(getApplicationContext(), SearchResultActivity.class);
                 startActivity(refresh_intent);
                 finish();
             }

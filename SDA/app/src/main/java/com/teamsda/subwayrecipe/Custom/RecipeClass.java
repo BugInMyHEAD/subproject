@@ -2,17 +2,28 @@ package com.teamsda.subwayrecipe.Custom;
 
 public class RecipeClass {
 
+    int position;
     String title;
-    String ingredients;
+    IngredientsClass ingredientsClass;
     String score;
 
     public RecipeClass(){}
 
-    public RecipeClass(String title, String ingredients, String score){
+    public RecipeClass(int position, String title, IngredientsClass ingredientsClass, String score){
+        this.position = position;
         this.title = title;
-        this.ingredients = ingredients;
+        this.ingredientsClass = ingredientsClass;
         this.score = score;
     }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -21,12 +32,12 @@ public class RecipeClass {
         this.title = title;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public IngredientsClass getIngredientsClass() {
+        return ingredientsClass;
     }
 
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+    public void setIngredientsClass(IngredientsClass ingredientsClass) {
+        this.ingredientsClass = ingredientsClass;
     }
 
     public String getScore() {

@@ -58,7 +58,7 @@ public class StarCustomAdapter extends BaseAdapter {
 
         //리스트뷰의 아이템에 맞는 String값을 입력
         holder.title.setText(recipe.title);
-        holder.ingredients.setText(recipe.ingredients);
+        //holder.ingredients.setText(recipe.ingredients);
         holder.score.setText(recipe.score);
 
         return v;

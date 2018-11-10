@@ -13,7 +13,7 @@ import com.teamsda.subwayrecipe.R;
 
 public class RecipeActivity extends AppCompatActivity {
 
-    TextView recipe_title,recipe_ingredients,recipe_mark,recipe_score;
+    TextView recipe_title,recipe_bread,recipe_veg,recipe_cheese,recipe_sauce,recipe_mark,recipe_score;
     String st_title,st_ingredients,st_mark,st_score;
     Button recipe_back,recipe_save,recipe_smart,recipe_qr;
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,18 +21,25 @@ public class RecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
 
         recipe_title = (TextView)findViewById(R.id.recipe_title);
-        recipe_ingredients = (TextView)findViewById(R.id.recipe_ingredients);
+        recipe_bread = (TextView)findViewById(R.id.recipe_bread);
+        recipe_veg = (TextView)findViewById(R.id.recipe_veg);
+        recipe_cheese = (TextView)findViewById(R.id.recipe_cheese);
+        recipe_sauce = (TextView)findViewById(R.id.recipe_sauce);
         recipe_mark = (TextView)findViewById(R.id.recipe_mark);
         recipe_score = (TextView)findViewById(R.id.recipe_score);
 
         Intent recipe_intent = getIntent();
         st_title = recipe_intent.getStringExtra("title");
         st_ingredients = recipe_intent.getStringExtra("ingredients");
+        String[] ingredients = st_ingredients.split("/");
         st_mark = recipe_intent.getStringExtra("mark");
         st_score = recipe_intent.getStringExtra("score");
 
         recipe_title.setText(st_title);
-        recipe_ingredients.setText(st_ingredients);
+        recipe_bread.setText(ingredients[0]);
+        recipe_veg.setText(ingredients[1]);
+        recipe_cheese.setText(ingredients[2]);
+        recipe_sauce.setText(ingredients[3]);
         recipe_mark.setText(st_mark);
         recipe_score.setText(st_score);
 
