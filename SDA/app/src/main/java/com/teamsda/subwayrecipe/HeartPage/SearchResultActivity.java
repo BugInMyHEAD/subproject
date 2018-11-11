@@ -49,9 +49,6 @@ public class SearchResultActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.listView_heart);
         mRecipeArr = new ArrayList<RecipeClass>();
 
-        mAdapter = new HeartCustomAdapter(getApplication(), mRecipeArr);
-        mListView.setAdapter(mAdapter);
-
         mRecipeArr.clear();
         //테스트용 하드코딩
         ArrayList<String> veg1 = new ArrayList<String>();
@@ -98,26 +95,80 @@ public class SearchResultActivity extends AppCompatActivity {
         //라디오 버튼 부분 수정
         //빵
         for(int i=0;i<mRecipeArr.size();i++) {
-            if (!mRecipeArr.get(i).getIngredientsClass().getBread().equals(bread)){
+            if (mRecipeArr.size() == 0)
+                break;
+            if (!mRecipeArr.get(i).getIngredientsClass().getBread().equals(bread)) {
+                if (mRecipeArr.size() == 0)
+                    break;
                 mRecipeArr.remove(i);
+                i = 0;
             }
-        }
-        //야채
-        for(int i=0;i<mRecipeArr.size();i++) {
             for(int j=0;j<veg.length;j++){
-                if (!mRecipeArr.get(i).getIngredientsClass().getVeg().contains(veg[j])) {
+                if(mRecipeArr.size()==0)
+                    break;
+                if (!mRecipeArr.get(i).getIngredientsClass().getVeg().toString().contains(veg[j])) {
                     mRecipeArr.remove(i);
+                    i=0;
+                }
+            }
+            for(int j=0;j<cheese.length;j++){
+                if(mRecipeArr.size()==0)
+                    break;
+                if (!mRecipeArr.get(i).getIngredientsClass().getCheese().toString().contains(cheese[j])) {
+                    mRecipeArr.remove(i);
+                    i=0;
+                }
+            }
+            for(int j=0;j<sauce.length;j++){
+                if(mRecipeArr.size()==0)
+                    break;
+                if (!mRecipeArr.get(i).getIngredientsClass().getSauce().toString().contains(sauce[j])) {
+                    mRecipeArr.remove(i);
+                    i=0;
                 }
             }
         }
-        /*//치즈
-        for(int i=0;i<mRecipeArr.size();i++) {
 
+        //작업이 빨라서 그런지 꼭 남는 게 생김 그래서 임의로 2번 돌림
+        {
+            for(int i=0;i<mRecipeArr.size();i++) {
+                if (mRecipeArr.size() == 0)
+                    break;
+                if (!mRecipeArr.get(i).getIngredientsClass().getBread().equals(bread)) {
+                    if (mRecipeArr.size() == 0)
+                        break;
+                    mRecipeArr.remove(i);
+                    i = 0;
+                }
+                for(int j=0;j<veg.length;j++){
+                    if(mRecipeArr.size()==0)
+                        break;
+                    if (!mRecipeArr.get(i).getIngredientsClass().getVeg().toString().contains(veg[j])) {
+                        mRecipeArr.remove(i);
+                        i=0;
+                    }
+                }
+                for(int j=0;j<cheese.length;j++){
+                    if(mRecipeArr.size()==0)
+                        break;
+                    if (!mRecipeArr.get(i).getIngredientsClass().getCheese().toString().contains(cheese[j])) {
+                        mRecipeArr.remove(i);
+                        i=0;
+                    }
+                }
+                for(int j=0;j<sauce.length;j++){
+                    if(mRecipeArr.size()==0)
+                        break;
+                    if (!mRecipeArr.get(i).getIngredientsClass().getSauce().toString().contains(sauce[j])) {
+                        mRecipeArr.remove(i);
+                        i=0;
+                    }
+                }
+            }
         }
-        //소스
-        for(int i=0;i<mRecipeArr.size();i++) {
 
-        }*/
+        mAdapter = new HeartCustomAdapter(getApplication(), mRecipeArr);
+        mListView.setAdapter(mAdapter);
 
         mAdapter.notifyDataSetChanged();
         mListView.setSelection(0);
