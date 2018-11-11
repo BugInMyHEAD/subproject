@@ -1,10 +1,13 @@
 package com.teamsda.subwayrecipe.HeartPage;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +18,16 @@ public class RecipeActivity extends AppCompatActivity {
 
     TextView recipe_title,recipe_bread,recipe_veg,recipe_cheese,recipe_sauce,recipe_mark,recipe_score;
     String st_where,st_title,st_ingredients,st_mark,st_score;
+    int position;
     Button recipe_back,recipe_save,recipe_smart,recipe_qr;
+    ImageView recipe_img;
+    Drawable drawable;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
 
+        recipe_img = (ImageView)findViewById(R.id.recipe_img);
         recipe_title = (TextView)findViewById(R.id.recipe_title);
         recipe_bread = (TextView)findViewById(R.id.recipe_bread);
         recipe_veg = (TextView)findViewById(R.id.recipe_veg);
@@ -31,11 +38,20 @@ public class RecipeActivity extends AppCompatActivity {
 
         Intent recipe_intent = getIntent();
         st_where = recipe_intent.getStringExtra("where");
+        position = recipe_intent.getIntExtra("position",1);
         st_title = recipe_intent.getStringExtra("title");
         st_ingredients = recipe_intent.getStringExtra("ingredients");
         String[] ingredients = st_ingredients.split("/");
         st_mark = recipe_intent.getStringExtra("mark");
         st_score = recipe_intent.getStringExtra("score");
+
+        switch (position%4){
+            case 0: drawable = getResources().getDrawable(R.drawable.bread4);break;
+            case 1: drawable = getResources().getDrawable(R.drawable.bread1);break;
+            case 2: drawable = getResources().getDrawable(R.drawable.bread2);break;
+            case 3: drawable = getResources().getDrawable(R.drawable.bread3);break;
+        }
+        recipe_img.setImageDrawable(drawable);
 
         recipe_title.setText(st_title);
         recipe_bread.setText(ingredients[0]);

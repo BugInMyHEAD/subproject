@@ -11,7 +11,10 @@
         android:layout_marginTop="250dp"
         android:text="마이 레시피"
         android:textSize="24dp"
-        android:textColor="#000000"
+        android:textStyle="bold"
+        android:padding="20dp"
+        android:textColor="@color/colorY"
+        android:background="@drawable/round_g"
         android:layout_gravity="center"/>
 
 

@@ -1,6 +1,7 @@
 package com.teamsda.subwayrecipe.HeartPage;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -51,6 +52,11 @@ public class SearchResultActivity extends AppCompatActivity {
 
         mRecipeArr.clear();
         //테스트용 하드코딩
+        Drawable drawable1 = getResources().getDrawable(R.drawable.bread1);
+        Drawable drawable2 = getResources().getDrawable(R.drawable.bread2);
+        Drawable drawable3 = getResources().getDrawable(R.drawable.bread3);
+        Drawable drawable4 = getResources().getDrawable(R.drawable.bread4);
+
         ArrayList<String> veg1 = new ArrayList<String>();
         veg1.add("토마토");
         veg1.add("피클");
@@ -74,14 +80,14 @@ public class SearchResultActivity extends AppCompatActivity {
         IngredientsClass ingredientsClass3 = new IngredientsClass("플랫브래드",veg1,cheese1,sauce1);
         IngredientsClass ingredientsClass4 = new IngredientsClass("플랫브래드",veg2,cheese2,sauce2);
 
-        RecipeClass recipeClass1 = new RecipeClass(1,"이탈리안 BMT",ingredientsClass1, "1000");
-        RecipeClass recipeClass2 = new RecipeClass(2,"이탈리안 BMT",ingredientsClass2, "999");
-        RecipeClass recipeClass3 = new RecipeClass(3,"이탈리안 BMT",ingredientsClass3, "998");
-        RecipeClass recipeClass4 = new RecipeClass(4,"이탈리안 BMT",ingredientsClass4, "997");
-        RecipeClass recipeClass5 = new RecipeClass(5,"이탈리안 BMT",ingredientsClass1, "996");
-        RecipeClass recipeClass6 = new RecipeClass(6,"이탈리안 BMT",ingredientsClass2, "995");
-        RecipeClass recipeClass7 = new RecipeClass(7,"이탈리안 BMT",ingredientsClass3, "994");
-        RecipeClass recipeClass8 = new RecipeClass(8,"이탈리안 BMT",ingredientsClass4, "993");
+        RecipeClass recipeClass1 = new RecipeClass(drawable1,1,"이탈리안 BMT",ingredientsClass1, "1000");
+        RecipeClass recipeClass2 = new RecipeClass(drawable2,2,"이탈리안 BMT",ingredientsClass2, "999");
+        RecipeClass recipeClass3 = new RecipeClass(drawable3,3,"이탈리안 BMT",ingredientsClass3, "998");
+        RecipeClass recipeClass4 = new RecipeClass(drawable4,4,"이탈리안 BMT",ingredientsClass4, "997");
+        RecipeClass recipeClass5 = new RecipeClass(drawable1,5,"이탈리안 BMT",ingredientsClass1, "996");
+        RecipeClass recipeClass6 = new RecipeClass(drawable2,6,"이탈리안 BMT",ingredientsClass2, "995");
+        RecipeClass recipeClass7 = new RecipeClass(drawable3,7,"이탈리안 BMT",ingredientsClass3, "994");
+        RecipeClass recipeClass8 = new RecipeClass(drawable4,8,"이탈리안 BMT",ingredientsClass4, "993");
 
         mRecipeArr.add(recipeClass1);
         mRecipeArr.add(recipeClass2);
@@ -181,6 +187,7 @@ public class SearchResultActivity extends AppCompatActivity {
                 Intent recipe_intent = new Intent(getApplicationContext(), RecipeActivity.class);
                 recipe_intent.putExtra("where","Result");
                 recipe_intent.putExtra("mark","♥");
+                recipe_intent.putExtra("position",ForRecipe.getPosition());
                 recipe_intent.putExtra("title", ForRecipe.getTitle());
                 recipe_intent.putExtra("ingredients", ForRecipe.getIngredientsClass().getIngredients());
                 recipe_intent.putExtra("score", ForRecipe.getScore());
