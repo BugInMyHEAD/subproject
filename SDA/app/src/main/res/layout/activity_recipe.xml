@@ -13,7 +13,10 @@
             android:layout_height="wrap_content"
             android:text="이전"
             android:textSize="24dp"
-            android:background="#00ff0000"
+            android:textStyle="bold"
+            android:textColor="@color/colorY"
+            android:background="@drawable/round_g"
+            android:layout_margin="3dp"
             android:layout_gravity="left"/>
         <Button
             android:id="@+id/recipe_save"
@@ -21,13 +24,18 @@
             android:layout_height="wrap_content"
             android:text="저장"
             android:textSize="24dp"
-            android:background="#00ff0000"
+            android:textStyle="bold"
+            android:textColor="@color/colorY"
+            android:background="@drawable/round_g"
+            android:layout_margin="3dp"
             android:layout_gravity="right"/>
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/outround_g"
+        android:layout_margin="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -171,6 +179,10 @@
             android:layout_height="wrap_content"
             android:text="스마트 오더"
             android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorY"
+            android:background="@drawable/round_g"
+            android:layout_margin="3dp"
             android:layout_weight="1"/>
         <Button
             android:id="@+id/recipe_qr"
@@ -178,6 +190,10 @@
             android:layout_height="wrap_content"
             android:text="QR코드 주문"
             android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorY"
+            android:background="@drawable/round_g"
+            android:layout_margin="3dp"
             android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>

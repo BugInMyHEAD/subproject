@@ -12,8 +12,8 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_gravity="right"
-        android:textColor="@color/colorG"
-        android:background="@drawable/round_y"
+        android:textColor="@color/colorY"
+        android:background="@drawable/round_g"
         android:layout_margin="10dp"/>
     <ListView
         android:id="@+id/listView_heart"
