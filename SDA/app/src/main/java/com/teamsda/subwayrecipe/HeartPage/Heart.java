@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.teamsda.subwayrecipe.Custom.HeartCustomAdapter;
 import com.teamsda.subwayrecipe.Custom.IngredientsClass;
@@ -76,14 +77,14 @@ public class Heart extends Fragment {
         IngredientsClass ingredientsClass3 = new IngredientsClass("플랫브래드",veg1,cheese1,sauce1);
         IngredientsClass ingredientsClass4 = new IngredientsClass("플랫브래드",veg2,cheese2,sauce2);
 
-        RecipeClass recipeClass1 = new RecipeClass(0,"이탈리안 BMT",ingredientsClass1, "1000");
-        RecipeClass recipeClass2 = new RecipeClass(1,"이탈리안 BMT",ingredientsClass2, "999");
-        RecipeClass recipeClass3 = new RecipeClass(2,"이탈리안 BMT",ingredientsClass3, "998");
-        RecipeClass recipeClass4 = new RecipeClass(3,"이탈리안 BMT",ingredientsClass4, "997");
-        RecipeClass recipeClass5 = new RecipeClass(4,"이탈리안 BMT",ingredientsClass1, "996");
-        RecipeClass recipeClass6 = new RecipeClass(5,"이탈리안 BMT",ingredientsClass2, "995");
-        RecipeClass recipeClass7 = new RecipeClass(6,"이탈리안 BMT",ingredientsClass3, "994");
-        RecipeClass recipeClass8 = new RecipeClass(7,"이탈리안 BMT",ingredientsClass4, "993");
+        RecipeClass recipeClass1 = new RecipeClass(1,"이탈리안 BMT",ingredientsClass1, "1000");
+        RecipeClass recipeClass2 = new RecipeClass(2,"이탈리안 BMT",ingredientsClass2, "999");
+        RecipeClass recipeClass3 = new RecipeClass(3,"이탈리안 BMT",ingredientsClass3, "998");
+        RecipeClass recipeClass4 = new RecipeClass(4,"이탈리안 BMT",ingredientsClass4, "997");
+        RecipeClass recipeClass5 = new RecipeClass(5,"이탈리안 BMT",ingredientsClass1, "996");
+        RecipeClass recipeClass6 = new RecipeClass(6,"이탈리안 BMT",ingredientsClass2, "995");
+        RecipeClass recipeClass7 = new RecipeClass(7,"이탈리안 BMT",ingredientsClass3, "994");
+        RecipeClass recipeClass8 = new RecipeClass(8,"이탈리안 BMT",ingredientsClass4, "993");
 
         mRecipeArr.add(recipeClass1);
         mRecipeArr.add(recipeClass2);
@@ -94,14 +95,12 @@ public class Heart extends Fragment {
         mRecipeArr.add(recipeClass7);
         mRecipeArr.add(recipeClass8);
 
-
         mAdapter.notifyDataSetChanged();
         mListView.setSelection(0);
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-               ForRecipe = mRecipeArr.get(position);
+                ForRecipe = mRecipeArr.get(position);
 
                 Intent recipe_intent = new Intent(getContext(), RecipeActivity.class);
                 recipe_intent.putExtra("where","Heart");

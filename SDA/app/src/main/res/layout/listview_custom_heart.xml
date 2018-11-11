@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:orientation="horizontal"
-        android:background="@color/colorG"
+        android:background="@drawable/round_g"
         android:layout_margin="10dp">
 
         <ImageView
@@ -74,7 +74,6 @@
     <!-- 순위 왕관 리스트 뷰에서 뿌려줄 때 인덱스 0,1,2 에게만 부여하면 됨 -->
 
     <TextView
-        android:visibility="invisible"
         android:id="@+id/heart_crown"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -82,7 +81,7 @@
         android:text="1"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:textColor="#525ea3"
+        android:textColor="@color/colorG"
         android:gravity="center"
-        android:background="#d2b8b8"/>
+        android:background="@drawable/round_y"/>
 </FrameLayout>

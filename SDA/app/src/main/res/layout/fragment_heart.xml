@@ -9,8 +9,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="검색"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_gravity="right"
-        android:background="#ffc20f"
+        android:textColor="@color/colorG"
+        android:background="@drawable/round_y"
         android:layout_margin="10dp"/>
     <ListView
         android:id="@+id/listView_heart"

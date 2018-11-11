@@ -46,6 +46,7 @@ public class HeartCustomAdapter extends BaseAdapter {
         if(v == null) {
             v = mInflater.inflate(R.layout.listview_custom_heart, null);
             holder = new ViewHolder();
+            holder.crown = (TextView)v.findViewById(R.id.heart_crown);
             holder.title = (TextView)v.findViewById(R.id.heart_title);
             holder.ingredients = (TextView)v.findViewById(R.id.heart_ingredients);
             holder.score = (TextView)v.findViewById(R.id.heart_score);
@@ -58,6 +59,9 @@ public class HeartCustomAdapter extends BaseAdapter {
         RecipeClass recipe = RecipeArr.get(position);
 
         //리스트뷰의 아이템에 맞는 String값을 입력
+
+        holder.crown.setText(String.valueOf(recipe.position));
+        holder.crown.setTag(recipe.position);
         holder.title.setText(recipe.title);
         holder.ingredients.setText(recipe.ingredientsClass.getIngredients());
         holder.score.setText(recipe.score);
@@ -79,6 +83,7 @@ public class HeartCustomAdapter extends BaseAdapter {
      * ViewHolder Class 생성
      */
     private class ViewHolder {
+        TextView crown;
         TextView title;
         TextView ingredients;
         TextView score;
