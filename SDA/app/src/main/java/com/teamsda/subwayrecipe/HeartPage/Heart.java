@@ -11,13 +11,18 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.teamsda.subwayrecipe.Custom.HeartCustomAdapter;
 import com.teamsda.subwayrecipe.Custom.IngredientsClass;
 import com.teamsda.subwayrecipe.Custom.RecipeClass;
 import com.teamsda.subwayrecipe.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class Heart extends Fragment {
     private ListView mListView;
@@ -44,6 +49,25 @@ public class Heart extends Fragment {
 
                 startActivity(search_intent);
                 getActivity().finish();
+            }
+        });
+
+        Button node = (Button)view.findViewById(R.id.node_button);
+        node.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String data ="값이 없음";
+                    data = new Task().execute().get();
+                    //JSONObject jsonData = new JSONObject(data);
+                    Toast.makeText(getContext(),data,Toast.LENGTH_SHORT).show();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } /*catch (JSONException e) {
+                    e.printStackTrace();
+                }*/
             }
         });
 

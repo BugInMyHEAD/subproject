@@ -106,4 +106,5 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(refresh_intent);
         finish();
     }
+
 }

@@ -5,6 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <Button
+        android:visibility="gone"
+        android:id="@+id/node_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서버"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_gravity="right"
+        android:textColor="@color/colorY"
+        android:background="@drawable/round_g"
+        android:layout_margin="10dp"/>
+    <Button
         android:id="@+id/search_heart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
